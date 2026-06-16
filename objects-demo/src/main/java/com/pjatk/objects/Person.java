@@ -57,7 +57,21 @@ public class Person {
     }
 
     public Person copy() {
-        return new Person(id, name, dateOfBirth);
+        Person copy = new Person(id, name, dateOfBirth);
+
+        for (Address address : addresses) {
+            Address addressCopy = new Address(
+                    address.getId(),
+                    address.getCity(),
+                    address.getPostalCode()
+            );
+
+            addressCopy.getAddressLines().addAll(address.getAddressLines());
+
+            copy.getAddresses().add(addressCopy);
+        }
+
+        return copy;
     }
 
     public String getName() {

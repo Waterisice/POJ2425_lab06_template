@@ -43,6 +43,18 @@ public class Address {
                 && addressLines.equals(other.addressLines);
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
     @Override
     public String toString() {
         return "(" + id + ", " + city + ", " + postalCode + ", " + addressLines + ")";
